@@ -40,10 +40,5 @@ void Animal::setType(std::string newType)
 void Animal::makeSound() const
 {
   
-  if (type == "Cat")
-    std::cout << "MEOWWWWW" << std::endl;
-  else if (type == "Dog")
-    std::cout << "WOOOFFFF" << std::endl;
-  else if (type == "Animal")
-    std::cout << "Making animal sounds" << std::endl;
+  std::cout << "Making animal sounds" << std::endl;
 }
