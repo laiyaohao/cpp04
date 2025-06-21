@@ -12,7 +12,7 @@ Dog::Dog(const Dog &other): Animal::Animal(other), brain(new Brain(*other.brain)
   std::cout << "Dog copy constructor is called." << std::endl;
 }
 
-Dog &Dog::operator=(const Dog &other) 
+Dog &Dog::operator=(const Dog &other)
 {
   std::cout << "Dog copy assignment operator is called" << std::endl;
   if (this != &other)

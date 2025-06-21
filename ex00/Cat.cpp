@@ -1,5 +1,9 @@
 #include "Cat.hpp"
 
+// cannot directly do Cat::Cat() : type("Cat");
+// because type is not a direct member of Cat
+// this initialization list method to initialize can only be done
+// with its own members
 Cat::Cat()
 {
   std::cout << "Cat default constructor called" << std::endl;
@@ -9,7 +13,6 @@ Cat::Cat()
 Cat::Cat(const Cat &other): Animal::Animal(other)
 {
   std::cout << "Cat copy constructor is called." << std::endl;
-  *this = other;
 }
 
 Cat &Cat::operator=(const Cat &other)
