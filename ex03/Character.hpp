@@ -1,10 +1,14 @@
-#include "ICharacter.hpp"
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
+
+# include "ICharacter.hpp"
 
 class Character : public ICharacter
 {
   private:
     std::string _name;
     AMateria *_inventory[4];
+  
   public:
     Character(std::string const & name);
     Character(Character const & src);
@@ -17,3 +21,5 @@ class Character : public ICharacter
 };
 
 std::ostream & operator<<(std::ostream & o, Character const & rhs);
+
+#endif

@@ -1,6 +1,7 @@
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-AMateria::AMateria(std::string const & type)
+AMateria::AMateria(std::string const &type)
 {
   this->type = type;
   std::cout << "AMateria constructor is called." << std::endl;
@@ -27,7 +28,11 @@ std::string const & AMateria::getType() const
   return this->type;
 }
 
-void AMateria::use(ICharacter& target) {}
+void AMateria::use(ICharacter& target)
+{
+  (void)target;
+  std::cout << "AMateria::use is called" << std::endl;
+}
 
 AMateria* AMateria::clone() const
 {

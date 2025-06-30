@@ -1,7 +1,7 @@
 NAME := ex03
 CC := c++
 CFLAGS := -Wall -Werror -Wextra -std=c++98
-SRC := main.cpp Ice.cpp Cure.cpp Character.cpp AMateria.cpp MateriaSource.cpp
+SRC := AMateria.cpp Character.cpp Ice.cpp Cure.cpp  MateriaSource.cpp main.cpp 
 OBJ := ${SRC:.cpp=.o}
 
 all: ${NAME}

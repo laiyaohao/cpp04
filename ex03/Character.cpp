@@ -1,4 +1,5 @@
 #include "Character.hpp"
+#include "AMateria.hpp"
 
 Character::Character(std::string const & name)
 {
@@ -17,7 +18,7 @@ Character::~Character()
   for (int i = 0; i < 4; i++)
   {
     if (this->_inventory[i])
-      delete this->_inventory[i];
+      this->_inventory[i] = NULL;
   }
 }
 
@@ -27,7 +28,7 @@ Character & Character::operator=(Character const & rhs)
   for (int i = 0; i < 4; i++)
   {
     if (this->_inventory[i])
-      delete this->_inventory[i];
+      this->_inventory[i] = NULL;
     if (rhs._inventory[i])
       this->_inventory[i] = rhs._inventory[i]->clone();
     else
@@ -58,10 +59,7 @@ void Character::unequip(int idx)
   if (idx < 0 || idx > 3)
     return;
   if (this->_inventory[idx])
-  {
-    delete this->_inventory[idx];
     this->_inventory[idx] = NULL;
-  }
 }
 
 void Character::use(int idx, ICharacter& target)
