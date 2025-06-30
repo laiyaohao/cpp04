@@ -10,7 +10,13 @@ Character::Character(std::string const & name)
 
 Character::Character(Character const & src)
 {
-  *this = src;
+  for (int i = 0; i < 4; i++)
+  {
+    if (src._inventory[i])
+      _inventory[i] = src._inventory[i]->clone();
+    else
+      _inventory[i] = NULL;
+  }
 }
 
 Character::~Character()
@@ -18,7 +24,7 @@ Character::~Character()
   for (int i = 0; i < 4; i++)
   {
     if (this->_inventory[i])
-      this->_inventory[i] = NULL;
+      delete this->_inventory[i];
   }
 }
 
@@ -28,7 +34,7 @@ Character & Character::operator=(Character const & rhs)
   for (int i = 0; i < 4; i++)
   {
     if (this->_inventory[i])
-      this->_inventory[i] = NULL;
+      delete this->_inventory[i];
     if (rhs._inventory[i])
       this->_inventory[i] = rhs._inventory[i]->clone();
     else
@@ -69,16 +75,3 @@ void Character::use(int idx, ICharacter& target)
   if (this->_inventory[idx])
     this->_inventory[idx]->use(target);
 }
-
-std::ostream & operator<<(std::ostream & o, Character const & rhs)
-{
-  o << rhs.getName() << " has ";
-  for (int i = 0; i < 4; i++)
-  {
-    if (rhs._inventory[i])
-      o << rhs._inventory[i]->getType() << " ";
-  }
-  o << std::endl;
-  return o;
-}
-
