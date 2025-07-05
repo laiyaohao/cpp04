@@ -14,6 +14,25 @@ int main()
   i->makeSound(); //will output the cat sound!
   j->makeSound();
   meta->makeSound();
+  std::cout << "\n\n" << std::endl;
+  std::cout << "testing Animal's copy assignment constructor" << std::endl;
+  Animal* test0 = new Animal();
+  Animal* test1 = new Animal();
+  std::cout << "test0's type: " << test0->getType() << " " << std::endl;
+  std::cout << "test1's type: " << test1->getType() << " " << std::endl;
+  *test1 = *test0;
+  test1->setType("HAHA");
+  std::cout << "test0's type: " << test0->getType() << " " << std::endl;
+  std::cout << "test1's type: " << test1->getType() << " " << std::endl;
+  std::cout << "\n\n" << std::endl;
+  std::cout << "testing Animal's copy constructor" << std::endl;
+  Animal* test2 = new Animal(*test1);
+  std::cout << "test2's type: " << test2->getType() << " " << std::endl;
+  test2->setType("lmaoo");
+  std::cout << "test2's type: " << test2->getType() << " " << std::endl;
+  std::cout << "test1's type: " << test1->getType() << " " << std::endl;
+  std::cout << "\n\n" << std::endl;
+
   
   std::cout << "Wrong example" << std::endl;
   const WrongAnimal* beta = new WrongAnimal();
@@ -27,5 +46,8 @@ int main()
   delete i;
   delete beta;
   delete k;
+  delete test0;
+  delete test1;
+  delete test2;
   return 0;
 }
