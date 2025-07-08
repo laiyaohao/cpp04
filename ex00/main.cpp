@@ -32,6 +32,24 @@ int main()
   std::cout << "test2's type: " << test2->getType() << " " << std::endl;
   std::cout << "test1's type: " << test1->getType() << " " << std::endl;
   std::cout << "\n\n" << std::endl;
+  std::cout << "testing Cat's copy assignment constructor" << std::endl;
+  Cat* test3 = new Cat();
+  Cat* test4 = new Cat();
+  std::cout << "test3's type: " << test3->getType() << " " << std::endl;
+  std::cout << "test4's type: " << test4->getType() << " " << std::endl;
+  *test4 = *test3;
+  std::cout << "HOLLL UPP" << std::endl;
+  test4->setType("HAHA");
+  std::cout << "test3's type: " << test3->getType() << " " << std::endl;
+  std::cout << "test4's type: " << test4->getType() << " " << std::endl;
+  std::cout << "\n\n" << std::endl;
+  std::cout << "testing Cat's copy constructor" << std::endl;
+  Cat* test5 = new Cat(*test4);
+  std::cout << "test5's type: " << test5->getType() << " " << std::endl;
+  test5->setType("lmaoo");
+  std::cout << "test5's type: " << test5->getType() << " " << std::endl;
+  std::cout << "test4's type: " << test4->getType() << " " << std::endl;
+  std::cout << "\n\n" << std::endl;
 
   
   std::cout << "Wrong example" << std::endl;
