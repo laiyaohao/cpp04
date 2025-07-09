@@ -15,7 +15,6 @@ AMateria::~AMateria()
 AMateria::AMateria(const AMateria &other) : type(other.type)
 {
   std::cout << "AMateria copy constructor is called." << std::endl;
-  *this = other;
 }
 
 AMateria &AMateria::operator=(const AMateria &other)

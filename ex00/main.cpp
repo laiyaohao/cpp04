@@ -38,7 +38,6 @@ int main()
   std::cout << "test3's type: " << test3->getType() << " " << std::endl;
   std::cout << "test4's type: " << test4->getType() << " " << std::endl;
   *test4 = *test3;
-  std::cout << "HOLLL UPP" << std::endl;
   test4->setType("HAHA");
   std::cout << "test3's type: " << test3->getType() << " " << std::endl;
   std::cout << "test4's type: " << test4->getType() << " " << std::endl;

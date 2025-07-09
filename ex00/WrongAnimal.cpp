@@ -6,10 +6,9 @@ WrongAnimal::WrongAnimal()
   setType("WrongAnimal");
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal &other)
+WrongAnimal::WrongAnimal(const WrongAnimal &other): type(other.getType())
 {
   std::cout << "WrongAnimal copy constructor is called." << std::endl;
-  *this = other;
 }
 
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &other)
