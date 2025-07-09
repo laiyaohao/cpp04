@@ -27,11 +27,13 @@ Animal::~Animal()
 
 std::string Animal::getType() const
 {
+  std::cout << "Animal getType called" << std::endl;
   return type;
 }
 
 void Animal::setType(std::string newType)
 {
+  std::cout << "Animal setType called" << std::endl;
   type = newType;
 }
 

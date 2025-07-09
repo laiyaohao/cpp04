@@ -48,6 +48,7 @@ void  Dog::deleteBrain()
 
 std::string Dog::getIdea(int ind) const
 {
+  std::cout << "Dog getIdea called" << std::endl;
   return brain->getIdea(ind);
 }
 

@@ -1,9 +1,8 @@
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
 
-AMateria::AMateria(std::string const &type)
+AMateria::AMateria(std::string const &type) : type(type)
 {
-  this->type = type;
   std::cout << "AMateria constructor is called." << std::endl;
 }
 
@@ -19,13 +18,23 @@ AMateria::AMateria(const AMateria &other) : type(other.type)
 
 AMateria &AMateria::operator=(const AMateria &other)
 {
-  (void)other;
+  if (this != &other)
+  {
+    setType(other.getType());
+  }
   return *this;
 }
 
 std::string const & AMateria::getType() const
 {
+  std::cout << "AMateria's getType method is called" << std::endl;
   return this->type;
+}
+
+void  AMateria::setType(std::string type)
+{
+  std::cout << "AMateria's setType method is called" << std::endl;
+  this->type = type;
 }
 
 void AMateria::use(ICharacter& target)
