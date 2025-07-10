@@ -7,7 +7,6 @@ class Brain
 {
   private:
     std::string ideas[100];
-    void setIdea(int ind, std::string idea);
   
   public:
     Brain();
@@ -15,6 +14,7 @@ class Brain
     Brain &operator=(const Brain &other);
     virtual ~Brain();
     std::string getIdea(int ind) const;
+    void setIdea(int ind, std::string idea);
 };
 
 #endif
